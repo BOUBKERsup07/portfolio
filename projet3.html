@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site éducatif full-stack</title>
+
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        /* Custom CSS for Accordion */
+        .accordion-button {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .accordion-button.active {
+            background-color: #38a169;
+            color: white;
+        }
+
+        .accordion-body {
+            padding: 1rem;
+            border-top: 1px solid #ddd;
+            display: none;
+            background-color: #f1f1f1;
+        }
+
+        /* Custom CSS for Header and Footer */
+        header,
+        footer {
+            background-color: #38a169;
+            color: white;
+        }
+
+        header h1,
+        footer p {
+            margin: 0;
+        }
+
+        /* Image and Video styling */
+        img,
+        video {
+            max-height: 400px;
+            object-fit: cover;
+        }
+
+        /* Style pour le modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="py-4 text-center shadow-lg">
+        <h1 class="text-2xl font-bold">Site éducatif full-stack</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto py-8 px-4">
+        <!-- Introduction -->
+        <section class="text-center mb-6">
+            <h2 class="text-3xl font-bold text-green-500 mb-4">Détails du Projet</h2>
+            <p class="text-gray-700 leading-relaxed">
+                Site web interactif utilisant J2EE, HTML, CSS, JS, et MySQL.
+            </p>
+        </section>
+
+        <!-- Media Section -->
+        <section class="flex flex-col lg:flex-row items-center gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Images -->
+                <img src="images/ecole.png" alt="Image du projet" class="image rounded-lg shadow-lg w-full h-48 object-cover cursor-pointer">
+                <img src="images/ecole1.png" alt="Image du projet" class="image rounded-lg shadow-lg w-full h-48 object-cover cursor-pointer">
+                <img src="images/ecole5.png" alt="Image du projet" class="image rounded-lg shadow-lg w-full h-48 object-cover cursor-pointer">
+                <img src="images/ecole6.png" alt="Image du projet" class="image rounded-lg shadow-lg w-full h-48 object-cover cursor-pointer">
+                <img src="images/ecole2.png" alt="Image du projet" class="image rounded-lg shadow-lg w-full h-48 object-cover cursor-pointer">
+                <img src="images/ecole7.png" alt="Image du projet" class="image rounded-lg shadow-lg w-full h-48 object-cover cursor-pointer">
+                <img src="images/ecole8.png" alt="Image du projet" class="image rounded-lg shadow-lg w-full h-48 object-cover cursor-pointer">
+                <img src="images/ecole4.png" alt="Image du projet" class="image rounded-lg shadow-lg w-full h-48 object-cover cursor-pointer">
+                <img src="images/ecole3.png" alt="Image du projet" class="image rounded-lg shadow-lg w-full h-48 object-cover cursor-pointer">
+            </div>
+        </section>
+
+        <!-- Modal pour afficher l'image agrandie -->
+        <div id="modal" class="modal">
+            <span class="close">&times;</span>
+            <img id="modal-image" src="" alt="Image agrandie">
+        </div>
+
+        <!-- Accordion Section -->
+        <section class="accordion mt-6" id="accordionDetails">
+            <!-- Item 1 -->
+            <div class="accordion-item">
+                <button class="accordion-button" id="buttonOne">
+                    Technologies utilisées
+                </button>
+                <div class="accordion-body" id="bodyOne">
+                    <ul>
+                        <li><strong>Langages :</strong> Html, Css, JavaScript, Sass, JEE</li>
+                        <li><strong>Frameworks :</strong> Hibernate </li>
+                        <li><strong>Outils :</strong> VS Code et Eclipse, Apache, Postman, phpMyAdmin</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="accordion-item">
+                <button class="accordion-button" id="buttonTwo">
+                    Objectifs du projet
+                </button>
+                <div class="accordion-body" id="bodyTwo">
+                    <b>Le projet a pour but de :</b>
+                    <ul>
+                        <li><b>C</b>onçu et mis en œuvre un site web éducatif en utilisant HTML, CSS, JavaScript, Sass, J2EE et MySQL.</li>
+                        <li><b>D</b>éveloppé un front-end interactif pour une expérience utilisateur fluide ainsi qu'un back-end J2EE pour des fonctionnalités serveur telles que la gestion des utilisateurs et le stockage sécurisé des données.</li>
+                        <li><b>L</b>ivré une plateforme éducative complète en full-stack.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation Button -->
+        <div class="text-center mt-6">
+            <a href="index.html" class="bg-green-500 text-white px-5 py-2 rounded shadow hover:bg-green-600 transition">
+                Retour à l'accueil
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-4 text-center mt-8">
+        <p>&copy; 2025 Boubker Cheyoukh. Tous droits réservés.</p>
+    </footer>
+
+    <!-- JavaScript for Accordion -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const buttons = document.querySelectorAll(".accordion-button");
+            const bodies = document.querySelectorAll(".accordion-body");
+
+            buttons.forEach((button, index) => {
+                button.addEventListener("click", () => {
+                    const isActive = button.classList.contains("active");
+                    // Close all sections
+                    buttons.forEach(btn => btn.classList.remove("active"));
+                    bodies.forEach(body => body.style.display = "none");
+
+                    // Toggle current section
+                    if (!isActive) {
+                        button.classList.add("active");
+                        bodies[index].style.display = "block";
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- JavaScript pour le modal d'agrandissement des images -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const images = document.querySelectorAll('.image');
+            const modal = document.getElementById('modal');
+            const modalImage = document.getElementById('modal-image');
+            const closeButton = document.querySelector('.close');
+
+            images.forEach(image => {
+                image.addEventListener('click', () => {
+                    modal.style.display = 'flex'; // Afficher le modal
+                    modalImage.src = image.src; // Ajouter la source de l'image cliquée
+                });
+            });
+
+            closeButton.addEventListener('click', () => {
+                modal.style.display = 'none'; // Fermer le modal
+            });
+
+            modal.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    modal.style.display = 'none'; // Fermer le modal si clic en dehors
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

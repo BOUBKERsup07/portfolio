@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Boubker Cheyoukh, étudiant en développement logiciel et IA">
+    <meta name="author" content="Boubker Cheyoukh">
+    <meta name="keywords" content="Boubker Cheyoukh, développeur, IA, Machine Learning, Portfolio">
+    <title>Portfolio - Boubker Cheyoukh</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="portfolio.png" type="image/png">
+    <style>
+        /* Custom animations */
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive adjustments */
+        /* Masquer le menu par défaut sur les petits écrans */
+        @media (max-width: 768px) {
+            nav ul {
+                color: bisque;
+                display: none;
+                flex-direction: column;
+                gap: 1rem;
+                background-color: rgba(64, 14, 228, 0.9);
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+                padding: 1rem;
+                text-align: center;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-purple-600 to-blue-500 text-white py-4 sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <h1 class="text-2xl font-bold">Boubker Cheyoukh</h1>
+
+            <!-- Bouton hamburger pour les mobiles -->
+            <button id="menu-toggle" class="md:hidden focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+
+            <!-- Navigation -->
+            <nav>
+                <ul id="menu" class="hidden md:flex space-x-4">
+                    <li><a href="#about" class="hover:text-yellow-300 transition-all duration-300">À propos</a></li>
+                    <li><a href="#skills" class="hover:text-yellow-300 transition-all duration-300">Compétences</a></li>
+                    <li><a href="#projects" class="hover:text-yellow-300 transition-all duration-300">Projets</a></li>
+                    <li><a href="#contact" class="hover:text-yellow-300 transition-all duration-300">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-12 bg-white fade-in">
+        <div class="container mx-auto text-center px-4">
+            <h2 class="text-4xl font-bold mb-6 text-purple-600">À propos de moi</h2>
+            <p class="text-gray-700 text-lg max-w-3xl mx-auto leading-relaxed mb-6">
+                Développeur passionné par l'<strong>intelligence artificielle</strong>, je suis actuellement en 3ème année de licence et à la recherche d'opportunités pour mettre en œuvre mes compétences en <strong>programmation</strong>, <strong>apprentissage machine</strong> et <strong>analyse de données</strong>, avec une maîtrise avancée des langages <strong>Python</strong> et <strong>Java</strong>. Je suis motivé par l'<strong>innovation</strong> et la <strong>résolution de problèmes</strong>. Mon objectif est de contribuer à des projets ambitieux exploitant le potentiel de l'<strong>IA</strong> pour développer des solutions pratiques et impactantes.
+            </p>
+            <!-- Profile Image -->
+            <img src="WhatsApp Image 2024-06-06 à 19.45.52_60bf46b0.jpg" alt="Boubker Cheyoukh"
+                class="rounded-full mx-auto mt-8 shadow-lg hover:scale-105 transition-transform w-40 h-40 object-cover">
+            <!-- Contact Information -->
+            <div class="mt-6 space-y-4 text-left md:text-center">
+                <p class="flex items-center justify-center text-gray-800">
+                    <i class="fas fa-envelope text-purple-600 mr-3"></i>
+                    <a href="mailto:boubker@example.com" class="hover:underline">cheyoukheboubker@gmail.com</a>
+                </p>
+                <p class="flex items-center justify-center text-gray-800">
+                    <i class="fas fa-phone text-purple-600 mr-3"></i>
+                    +212 6 44 43 57 52
+                </p>
+                <p class="flex items-center justify-center text-gray-800">
+                    <i class="fab fa-github text-purple-600 mr-3"></i>
+                    <a href="https://github.com/BOUBKERsup07" class="hover:underline">github.com/BoubkerCheyoukh</a>
+                </p>
+                <p class="flex items-center justify-center text-gray-800">
+                    <i class="fab fa-linkedin text-purple-600 mr-3"></i>
+                    <a href="https://www.linkedin.com/in/boubker-cheyoukh-4696a4276/" class="hover:underline">linkedin.com/in/BoubkerCheyoukh</a>
+                </p>
+            </div>
+
+            <!-- Buttons -->
+            <div class="mt-8 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <a href="#projects"
+                    class="bg-purple-600 text-white px-6 py-3 rounded-md shadow hover:bg-purple-700 transition duration-300">Voir mes projets</a>
+                <a href="#contact"
+                    class="bg-gray-900 text-white px-6 py-3 rounded-md shadow hover:bg-gray-800 transition duration-300">Contactez-moi</a>
+                <a href="CV.pdf" download="Mon_CV.pdf"
+                    class="bg-purple-600 text-white px-6 py-3 rounded-md shadow hover:bg-purple-700 transition duration-300">Télécharger mon CV</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-12 bg-gradient-to-br from-gray-100 to-gray-200">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-6 text-blue-500">Compétences</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 skills-grid">
+                <!-- Compétences items -->
+                <div class="bg-white p-6 shadow-lg rounded text-center hover:shadow-xl transition-shadow">
+                    <i class="fas fa-code text-4xl text-yellow-500 mb-4"></i>
+                    <h3 class="font-bold">Développement Front-end</h3>
+                    <p class="text-gray-600">HTML, CSS, JavaScript, Sass, Tailwind CSS, Bootstrap, React</p>
+                </div>
+                <div class="bg-white p-6 shadow-lg rounded text-center hover:shadow-xl transition-shadow">
+                    <i class="fas fa-database text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="font-bold">Bases de données</h3>
+                    <p class="text-gray-600">MySQL, SQLite, phpMyAdmin</p>
+                </div>
+                <div class="bg-white p-6 shadow-lg rounded text-center hover:shadow-xl transition-shadow">
+                    <i class="fas fa-server text-4xl text-green-500 mb-4"></i>
+                    <h3 class="font-bold">Développement Back-end</h3>
+                    <p class="text-gray-600">Java, Java POO, PHP, Python</p>
+                </div>
+                <div class="bg-white p-6 shadow-lg rounded text-center hover:shadow-xl transition-shadow">
+                    <i class="fas fa-tools text-4xl text-teal-500 mb-4"></i>
+                    <h3 class="font-bold">Frameworks et outils Python</h3>
+                    <p class="text-gray-600">Django, Flask, PyQt5, Tkinter</p>
+                </div>
+                <div class="bg-white p-6 shadow-lg rounded text-center hover:shadow-xl transition-shadow">
+                    <i class="fas fa-cogs text-4xl text-teal-500 mb-4"></i>
+                    <h3 class="font-bold">Frameworks Java</h3>
+                    <p class="text-gray-600">JEE (Java Enterprise Edition), Hibernate</p>
+                </div>
+                <div class="bg-white p-6 shadow-lg rounded text-center hover:shadow-xl transition-shadow">
+                    <i class="fas fa-brain text-4xl text-purple-500 mb-4"></i>
+                    <h3 class="font-bold">IA & Machine Learning</h3>
+                    <p class="text-gray-600">Python</p>
+                </div>
+                <div class="bg-white p-6 shadow-lg rounded text-center hover:shadow-xl transition-shadow">
+                    <i class="fas fa-project-diagram text-4xl text-orange-500 mb-4"></i>
+                    <h3 class="font-bold">Modélisation et Conception</h3>
+                    <p class="text-gray-600">UML, Merise</p>
+                </div>
+                <div class="bg-white p-6 shadow-lg rounded text-center hover:shadow-xl transition-shadow">
+                    <i class="fas fa-code text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="font-bold">Langages proches du matériel</h3>
+                    <p class="text-gray-600">Assembly, C</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-12 bg-white">
+        <div class="container mx-auto text-center px-4">
+            <h2 class="text-4xl font-bold mb-6 text-blue-500">Projets</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 projects-grid">
+                <!-- Projets items -->
+                <div class="bg-gray-100 p-6 shadow-lg rounded hover:scale-105 transition-transform">
+                    <h3 class="font-bold text-xl">Gestion des données scolaires</h3>
+                    <p class="text-gray-600 mt-2">Outils Python pour manipuler et analyser les données des écoles.</p>
+                    <a href="projet1.html"
+                        class="mt-4 inline-block bg-blue-500 text-white px-4 py-2 rounded shadow hover:bg-blue-600 transition">Voir Détails</a>
+                </div>
+                <div class="bg-gray-100 p-6 shadow-lg rounded hover:scale-105 transition-transform">
+                    <h3 class="font-bold text-xl">Gestion des restaurants</h3>
+                    <p class="text-gray-600 mt-2">Une plateforme de gestion des restaurants simplifie les opérations, améliore l'expérience client.</p>
+                    <a href="projet2.html"
+                        class="mt-4 inline-block bg-blue-500 text-white px-4 py-2 rounded shadow hover:bg-blue-600 transition">Voir Détails</a>
+                </div>
+                <div class="bg-gray-100 p-6 shadow-lg rounded hover:scale-105 transition-transform">
+                    <h3 class="font-bold text-xl">Site éducatif full-stack</h3>
+                    <p class="text-gray-600 mt-2">Site web interactif utilisant J2EE, HTML, CSS, JS, et MySQL.</p>
+                    <a href="projet3.html"
+                        class="mt-4 inline-block bg-blue-500 text-white px-4 py-2 rounded shadow hover:bg-blue-600 transition">Voir Détails</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-12 bg-gradient-to-br from-blue-500 to-purple-600 text-white">
+        <div class="container mx-auto text-center px-4">
+            <h2 class="text-4xl font-bold mb-6">Contactez-moi</h2>
+            <form action="contact.php" method="POST" class="max-w-lg mx-auto bg-white p-6 rounded shadow text-gray-800 contact-form">
+                <div class="mb-4">
+                    <label class="block text-left font-bold">Nom</label>
+                    <input type="text" name="nom" class="w-full border-gray-300 rounded mt-2 p-2" placeholder="Votre nom" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-left font-bold">Email</label>
+                    <input type="email" name="email" class="w-full border-gray-300 rounded mt-2 p-2" placeholder="Votre email" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-left font-bold">Message</label>
+                    <textarea name="message" class="w-full border-gray-300 rounded mt-2 p-2" rows="4" placeholder="Votre message" required></textarea>
+                </div>
+                <button type="submit" class="bg-blue-500 text-white py-2 px-6 rounded hover:bg-blue-600 transition">
+                    Envoyer
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left px-4 footer-grid">
+            <div>
+                <h3 class="text-lg font-bold mb-4">À propos</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Développeur passionné par l'intelligence artificielle et le développement d'applications.
+                </p>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-4">Liens utiles</h3>
+                <ul>
+                    <li><a href="#about" class="text-gray-400 hover:text-yellow-300 transition">À propos</a></li>
+                    <li><a href="#skills" class="text-gray-400 hover:text-yellow-300 transition">Compétences</a></li>
+                    <li><a href="#projects" class="text-gray-400 hover:text-yellow-300 transition">Projets</a></li>
+                    <li><a href="#contact" class="text-gray-400 hover:text-yellow-300 transition">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-4">Contact</h3>
+                <p class="text-gray-400 text-sm">Email : <a href="mailto:boubker.cheyoukh@example.com"
+                        class="hover:text-yellow-300">cheyoukheboubker@gmail.com</a></p>
+                <p class="text-gray-400 text-sm">Téléphone : <a href="tel:+212600000000"
+                        class="hover:text-yellow-300">+212 0644-435752</a></p>
+                <div class="flex justify-center md:justify-start space-x-4 mt-4">
+                    <a href="https://github.com/BOUBKERsup07" target="_blank" class="hover:text-yellow-300"><i
+                            class="fab fa-github fa-lg"></i></a>
+                    <a href="https://www.linkedin.com/in/boubker-cheyoukh-4696a4276/" target="_blank"
+                        class="hover:text-yellow-300"><i class="fab fa-linkedin fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-4 text-gray-400 text-sm text-center">
+            <p>&copy; 2025 Boubker Cheyoukh. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript pour le menu hamburger -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.getElementById("menu-toggle");
+            const menu = document.getElementById("menu");
+
+            // Ouvrir/fermer le menu au clic sur le bouton hamburger
+            menuToggle.addEventListener("click", () => {
+                menu.classList.toggle("active");
+            });
+
+            // Fermer le menu au clic sur un lien
+            const menuLinks = document.querySelectorAll("#menu a");
+            menuLinks.forEach(link => {
+                link.addEventListener("click", () => {
+                    menu.classList.remove("active"); // Fermer le menu
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

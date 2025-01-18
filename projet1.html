@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des données scolaires</title>
+
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        /* Custom CSS for Accordion */
+        .accordion-button {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .accordion-button.active {
+            background-color: #38a169;
+            color: white;
+        }
+
+        .accordion-body {
+            padding: 1rem;
+            border-top: 1px solid #ddd;
+            display: none;
+            background-color: #f1f1f1;
+        }
+
+        /* Custom CSS for Header and Footer */
+        header,
+        footer {
+            background-color: #38a169;
+            color: white;
+        }
+
+        header h1,
+        footer p {
+            margin: 0;
+        }
+
+        /* Style for image grid */
+        .image {
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .image:hover {
+            transform: scale(1.05);
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="py-4 text-center shadow-lg">
+        <h1 class="text-2xl font-bold">Gestion des données scolaires</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto py-8 px-4">
+        <!-- Introduction -->
+        <section class="text-center mb-6">
+            <h2 class="text-3xl font-bold text-green-500 mb-4">Détails du Projet</h2>
+            <p class="text-gray-700 leading-relaxed">
+                Développement de solutions Python pour la gestion des données scolaires.
+                Dans le cadre de mes compétences en Python, j'ai conçu et implémenté des solutions pour la gestion des données scolaires. Ces solutions incluent la manipulation, l'organisation et l'analyse des informations relatives aux élèves, enseignants et résultats académiques. En utilisant des outils tels que Tkinter pour les interfaces graphiques et SQLiteStudio pour la gestion de bases de données, j'ai optimisé le traitement des données et automatisé des processus administratifs, améliorant ainsi l'efficacité et la précision des opérations.
+            </p>
+        </section>
+
+        <!-- Media Section -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <img src="images/TKINTER7.png" alt="Image du projet" class="image rounded-lg shadow-lg w-full h-48 object-cover">
+            <img src="images/TKINTER10.png" alt="Image du projet" class="image rounded-lg shadow-lg w-full h-48 object-cover">
+            <img src="images/TKINTER9.png" alt="Image du projet" class="image rounded-lg shadow-lg w-full h-48 object-cover">
+            <img src="images/TKINTER8.png" alt="Image du projet" class="image rounded-lg shadow-lg w-full h-48 object-cover">
+            <img src="images/TKINTER2.png" alt="Image du projet" class="image rounded-lg shadow-lg w-full h-48 object-cover">
+            <img src="images/TKINTER5.png" alt="Image du projet" class="image rounded-lg shadow-lg w-full h-48 object-cover">
+            <img src="images/TKINTER3.png" alt="Image du projet" class="image rounded-lg shadow-lg w-full h-48 object-cover">
+            <img src="images/TKINTER4.png" alt="Image du projet" class="image rounded-lg shadow-lg w-full h-48 object-cover">
+            <img src="images/TKINTER6.png" alt="Image du projet" class="image rounded-lg shadow-lg w-full h-48 object-cover">
+            <div class="flex justify-center items-center">
+                <img src="images/TKINTER1.png" alt="Image du projet" class="image rounded-lg shadow-lg w-full h-48 object-cover">
+            </div>
+        </div>
+
+        <!-- Modal for enlarged images -->
+        <div id="modal" class="modal">
+            <span class="close">&times;</span>
+            <img id="modal-image" src="" alt="Image agrandie">
+        </div>
+
+        <!-- Accordion Section -->
+        <section class="accordion mt-6" id="accordionDetails">
+            <div class="accordion-item">
+                <button class="accordion-button" id="buttonOne">
+                    Technologies utilisées
+                </button>
+                <div class="accordion-body" id="bodyOne">
+                    <ul>
+                        <li><strong>Langages :</strong> Python</li>
+                        <li><strong>Frameworks :</strong> Tkinter</li>
+                        <li><strong>Outils :</strong> SQLiteStudio, PyCharm</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button" id="buttonTwo">
+                    Objectifs du projet
+                </button>
+                <div class="accordion-body" id="bodyTwo">
+                    <ul>
+                        <li><b>C</b>onçu et implémenté des solutions Python pour la gestion des données scolaires.</li>
+                        <li><b>D</b>éveloppé des interfaces graphiques intuitives avec Tkinter.</li>
+                        <li><b>O</b>ptimisé le traitement des données avec SQLiteStudio.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation Button -->
+        <div class="text-center mt-6">
+            <a href="index.html" class="bg-green-500 text-white px-5 py-2 rounded shadow hover:bg-green-600 transition">
+                Retour à l'accueil
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-4 text-center mt-8">
+        <p>&copy; 2025 Boubker Cheyoukh. Tous droits réservés.</p>
+    </footer>
+
+    <!-- JavaScript for Accordion and Modal -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const buttons = document.querySelectorAll(".accordion-button");
+            const bodies = document.querySelectorAll(".accordion-body");
+
+            buttons.forEach((button, index) => {
+                button.addEventListener("click", () => {
+                    const isActive = button.classList.contains("active");
+                    buttons.forEach(btn => btn.classList.remove("active"));
+                    bodies.forEach(body => body.style.display = "none");
+
+                    if (!isActive) {
+                        button.classList.add("active");
+                        bodies[index].style.display = "block";
+                    }
+                });
+            });
+
+            const images = document.querySelectorAll('.image');
+            const modal = document.getElementById('modal');
+            const modalImage = document.getElementById('modal-image');
+            const closeButton = document.querySelector('.close');
+
+            images.forEach(image => {
+                image.addEventListener('click', () => {
+                    modal.style.display = 'flex';
+                    modalImage.src = image.src;
+                });
+            });
+
+            closeButton.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+
+            modal.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    modal.style.display = 'none'; // Fermer le modal si clic en dehors
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
